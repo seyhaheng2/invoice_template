@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title
+      = content_for?(:title) ? yield(:title) : "eProcurement"
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+  %body.nav-md{:id => "#{controller_name}-#{params[:action]}", style: "background:#F7F7F7;"}
+
+    .container.body
+      - flash.each do |key, value|
+        #flash{:align => "center", :class => "alert alert-#{key}"}= value
+      = yield
