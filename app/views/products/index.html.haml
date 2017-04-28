@@ -1,0 +1,30 @@
+.layout-content-body
+  .row.gutter-xs
+    .col-xs-12
+      .card
+        .card-header
+          .card-actions
+            = link_to new_product_path, class: 'card-action' do
+              %span.glyphicon.glyphicon-plus
+            %button.card-action.card-toggler{:title => "Collapse", :type => "button"}
+            %button.card-action.card-reload{:title => "Reload", :type => "button"}
+            %button.card-action.card-remove{:title => "Remove", :type => "button"}
+          %strong តារាងឈ្មោះ products
+        .card-body
+          %table#demo-datatables-1.table.table-striped.table-nowrap.dataTable{:cellspacing => "0", :width => "100%"}
+            %thead
+              %tr
+                %th Idcode
+                %th Name
+                %th Size
+                %th Price
+                %th Description
+                %th User
+            %tbody
+              - @products.each do |product|
+                %tr
+                  %td.col-xs-= product.idcode
+                  %td.col-xs-= product.name
+                  %td.col-xs-= product.size
+                  %td.col-xs-= product.price
+                  %td.col-xs-= product.description

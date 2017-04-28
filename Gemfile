@@ -57,6 +57,7 @@ gem 'neat',               '~> 1.7.2'
 gem 'pundit',             '~> 1.1.0'
 gem 'datagrid',           '~> 1.4.4'
 gem 'simple_form',        '~> 3.2.1'
+gem 'bootstrap-generators'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

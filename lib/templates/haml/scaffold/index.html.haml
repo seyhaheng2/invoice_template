@@ -1,0 +1,25 @@
+.layout-content-body
+  .row.gutter-xs
+    .col-xs-12
+      .card
+        .card-header
+          .card-actions
+            = link_to new_<%= singular_table_name %>_path, class: 'card-action' do
+              %span.glyphicon.glyphicon-plus
+            %button.card-action.card-toggler{:title => "Collapse", :type => "button"}
+            %button.card-action.card-reload{:title => "Reload", :type => "button"}
+            %button.card-action.card-remove{:title => "Remove", :type => "button"}
+          %strong តារាងឈ្មោះ <%= plural_table_name %>
+        .card-body
+          %table#demo-datatables-1.table.table-striped.table-nowrap.dataTable{:cellspacing => "0", :width => "100%"}
+            %thead
+              %tr
+<% for attribute in attributes -%>
+                %th <%= attribute.human_name %>
+<% end -%>
+            %tbody
+              - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
+                %tr
+<% for attribute in attributes -%>
+                  %td.col-xs-= <%= singular_table_name %>.<%= attribute.name %>
+<% end -%>

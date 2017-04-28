@@ -1,0 +1,14 @@
+.layout-content-body
+  .row.gutter-xs
+    .col-xs-12
+      .card
+        .card-header
+          .card-actions
+            = link_to <%= index_helper %>_path, class: 'card-action' do
+              %span.glyphicon.glyphicon-list-alt
+            %button.card-action.card-toggler{:title => "Collapse", :type => "button"}
+            %button.card-action.card-reload{:title => "Reload", :type => "button"}
+            %button.card-action.card-remove{:title => "Remove", :type => "button"}
+          %strong New <%= singular_table_name %>
+        .card-body
+          = render 'form'

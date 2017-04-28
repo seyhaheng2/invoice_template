@@ -1,0 +1,16 @@
+.layout-content-body
+  .row.gutter-xs
+    .col-xs-12
+      .card
+        .card-header
+          .card-actions
+            = link_to users_path, class: 'card-action' do
+              %span.glyphicon.glyphicon-list-alt
+            = link_to @user, class: 'card-action' do
+              %span.glyphicon.glyphicon-info-sign
+            %button.card-action.card-toggler{:title => "Collapse", :type => "button"}
+            %button.card-action.card-reload{:title => "Reload", :type => "button"}
+            %button.card-action.card-remove{:title => "Remove", :type => "button"}
+          %strong Editing user
+        .card-body
+          = render 'form'
